@@ -19,5 +19,5 @@ let length = i;
 for (i = 0; i < length; i++){
     console.log(arrayNumeros[i]);
     suma += arrayNumeros[i];
-}
+} 
 console.log("Suma de los numeros del array =" + suma);
