@@ -1,16 +1,30 @@
+let promedio;
+let arrayNotas = [];
 let flag = true;
-let arrayCalificaciones = [i][j];
-let i = 0;
-let j = 0;
-let suma = 0;
+let numeroDeAlumno = 0;
 
+prompt("Debe ingresar 5 calificaiones por alumno");
 do {
-    let nombre = +prompt("Ingrese nombre del estudiante");
-    arrayCalificaciones [i][j] = nombre;
-    for (let index = 0; index < 10; index++) {
-        let num = +prompt("Ingrese una calificación del alumno");
-        arrayCalificaciones [i][j] = num;
-        j++;
+    for( let index = 0; index < 5; index++ ) {
+        arrayNotas [index]= +prompt("Ingrese nota del alumno");
     }
-    i++;
-}while (flag)
+    promedio = promedioNotas(arrayNotas);
+
+    numeroDeAlumno++;
+    console.log("Alumno N°" +numeroDeAlumno + ":"+ promedio);
+
+    let response = prompt("Desea ingresar otro alumno? Y/N")
+    if (response.toUpperCase() === "N"){
+        flag = false;
+    }
+}while(flag)
+
+function promedioNotas (notas = []){
+    let suma = 0;
+    let largo = notas.length;
+    for( let index = 0; index < largo; index++ ){
+        suma += notas[ index ];
+    }
+    promedio = suma/largo;
+    return(promedio);
+}
